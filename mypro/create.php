@@ -33,13 +33,9 @@ if(isset($_POST['create'])){
                 <td>Mobile</td>
                 <td><input type="text" name="mobile" ></td>
             </tr>
-            <tr>
-
-                <td></td>
-                <td><input type="submit" name="create" value="create"></td>
-            </tr>
 
         </table>
+        <td><input type="submit" name="create" value="create"></td>
     </form>
 </body>
 </html>
