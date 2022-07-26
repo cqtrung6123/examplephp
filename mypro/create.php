@@ -9,33 +9,37 @@ if(isset($_POST['create'])){
 }
 ?>
 <html>
-<header>
-
-</header>
-<a href="index.php"> Go to home</a>
+<head>
+    <link rel="stylesheet"
+          href = "http://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body{font: 14px sans-serif}
+    </style>
+</head>
+<h2><a href="index.php"> Go to home</a></h2>
 <body>
     <form name="create" method="post" action="create.php">
         <table width="80%" border=1px>
 
             <tr>
                 <td>Name</td>
-                <td><input type="text" name="name" ></td>
+                <td><input class="form-control" type="text" name="name" ></td>
             </tr>
 
             <tr>
 
                 <td>Email</td>
-                <td><input type="text" name="email" ></td>
+                <td><input class="form-control" type="text" name="email" ></td>
             </tr>
 
             <tr>
 
                 <td>Mobile</td>
-                <td><input type="text" name="mobile" ></td>
+                <td><input class="form-control" type="text" name="mobile" ></td>
             </tr>
 
         </table>
-        <td><input type="submit" name="create" value="create"></td>
+        <td><input class="btn btn-primary" type="submit" name="create" value="create"></td>
     </form>
 </body>
 </html>

@@ -1,8 +1,13 @@
-
 <?php
-    include_once ('Config.php');
+include_once ('Config.php');
+session_start();
+if (isset($_SESSION['loggedin'])==false){
+    header("location:login.php");
+}else{
     $result=mysqli_query($mysqli,'SELECT*FROM student ORDER BY id DESC');
+}
 ?>
+
 <html>
 <header>
     <!-- CSS only -->
@@ -14,9 +19,10 @@
             margin-top:5% ;
         }
         .search-box{
-            width: 80%;
-        }
+            width: 100%;
 
+            margin-bottom: 20px;
+        }
         .result{
             position: relative;
             z-index: 999;
@@ -28,17 +34,13 @@
             background: #f2f2f2;
         }
         i{
-
             width: 40px;
             height: auto;
             margin-top: -25px;
         }
         button{
-            width: 20%;
-            margin-top: -20px;
+            margin-bottom: 60px;
         }
-
-
 
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -73,11 +75,11 @@
 <div class="container">
 
         <div class="search-box">
+            <button class="btn btn-info float-start" style="margin-bottom: 15px ;background-color: saddlebrown"><a href="create.php"> Add student</a></button>
             <input class="form-control border-success" type="text" autocomplete="off" placeholder="search student....">
             <i class="bi bi-search float-end"></i>
             <div class="result" ></div>
         </div>
-        <button class="btn btn-info float-end"><a href="create.php"> Add student</a></button>
 
     <table  class="table table-bordered border-primary">
         <tr>
@@ -97,8 +99,8 @@
         }
         ?>
     </table>
+    <button class="btn btn-primary"><a href="logout.php" style="color: black">Log out</a></button>
 </div>
-
 </body>
 </html>
 

@@ -24,6 +24,7 @@ while($stu_data=mysqli_fetch_array($result)){
 ?>
 <html>
 <header>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <style>
         input{
             width: 100%;
@@ -32,33 +33,28 @@ while($stu_data=mysqli_fetch_array($result)){
 </header>
 <body>
 <title>Update student information</title>
-<form name="updateStudent" method="post" action="edit.php">
-    <table width="80%" border=1px>
-
-        <tr>
-            <td>Name</td>
-            <td><input type="text" name="name" value=<?php echo $name?>></td>
-            <td style="display: none"><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
-            <td><input type="submit" name="update" value="update"></td>
-        </tr>
-
-        <tr>
-
-            <td>Email</td>
-            <td><input type="text" name="email" value=<?php echo $email?>></td>
-            <td style="display: none" ><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
-            <td><input type="submit" name="update" value="update"></td>
-        </tr>
-
-        <tr>
-
-            <td>Mobile</td>
-            <td><input type="text" name="mobile" value=<?php echo $mobile?>></td>
-            <td style="display: none"><input type="hidden"  name="id" value=<?php echo $_GET['id'];?>></td>
-            <td><input type="submit" name="update" value="update"></td>
-        </tr>
-    </table>
-</form>
+    <div class="container">
+        <form name="updateStudent" method="post" action="edit.php">
+            <table class="table table-bordered border-primary">
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="name" value=<?php echo $name?>></td>
+                    <td style="display: none"><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text" name="email" value=<?php echo $email?>></td>
+                    <td style="display: none" ><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
+                </tr>
+                <tr>
+                    <td>Mobile</td>
+                    <td><input type="text" name="mobile" value=<?php echo $mobile?>></td>
+                    <td style="display: none"><input type="hidden"  name="id" value=<?php echo $_GET['id'];?>></td>
+                </tr>
+                <td><input type="submit" name="update" value="update"></td>
+            </table>
+        </form>
+    </div>
 </body>
 
 </html>
